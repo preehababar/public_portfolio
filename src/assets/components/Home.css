@@ -1,0 +1,128 @@
+/* Remove overflow forever */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ---- HERO ---- */
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000; /* Fallback color in case image fails to load */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 180px;
+  margin-top: 60px;
+}
+
+/* Soft shading */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Content centered */
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Text styling */
+.hero-title {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Size + weight */
+.animated-line {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Second line bolder */
+.delay {
+  font-weight: 500;
+}
+
+/* Split-letter animation */
+.letter {
+  opacity: 0;
+  transform: translateY(20px);
+  display: inline-block;
+  animation: fadeUp 1.2s forwards ease-out;
+  animation-delay: calc(0.035s * var(--i));
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+button a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+/* Luxury Button */
+.hero-btn {
+  margin-top: 30px;
+  padding: 14px 45px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: 0.35s ease;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+
+}
+
+.hero-btn:hover {  
+  background: #af8565;
+  color: #fff;
+  transform: translateY(-2px);
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .animated-line {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-line {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,63 @@
+/* NavBar.css - premium look + centered links + spacing */
+
+.skin-bg {
+  background-color: #af8565; /* skin tone - change if you want another shade */
+}
+
+/* Make sure the nav list is truly spaced and centered */
+.navbar-nav {
+  display: flex;            /* ensures gap works consistently */
+  align-items: center;
+  justify-content: center;
+  gap: 2.25rem;             /* spacing between items (you can tweak) */
+}
+
+/* Slightly larger nav text for desktop */
+.navbar-nav .nav-link {
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Premium underline animation */
+.premium-link {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.premium-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0%;
+  background: white;
+  transition: width 0.28s ease;
+}
+
+.premium-link:hover::after {
+  width: 100%;
+}
+
+/* Keep page content from hiding beneath the fixed navbar */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+.navbar-nav .nav-link:hover {
+  color: #af8565;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.navbar-brand:hover {
+  color: #af8565;
+}

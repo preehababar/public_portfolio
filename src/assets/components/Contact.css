@@ -1,0 +1,101 @@
+.contact-section {
+  width: 100%;
+  padding: 140px 0;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.contact-container {
+  width: 78%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+}
+
+.contact-sub {
+  font-size: 1.18rem;
+  color: #444;
+  margin-bottom: 60px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* GRID */
+/* PERFECTLY EVEN CARD GRID */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Ensure boxes ALWAYS match height */
+.contact-box {
+  height: 150px; /* fixed height so all match */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* CARD */
+.contact-card {
+  background: #ffffff;
+  border: 1.5px solid #af8565;
+  padding: 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: all 0.35s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    height: 140px;
+  }
+}
+
+.contact-card:hover {
+  background: #af8565;
+  color: #ffffff;
+  transform: translateY(-5px);
+}
+
+/* Icon */
+.contact-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+
+/* Labels */
+.contact-label {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  display: block;
+}
+
+.contact-value {
+  margin-top: 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}

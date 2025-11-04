@@ -1,0 +1,159 @@
+/* Premium Portfolio - uses Montserrat for UI */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+:root{
+  --accent: #af8565; /* your skin tone */
+  --muted: #f7f2ec;
+  --text: #111;
+}
+
+/* page reset safety */
+.premium-portfolio {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text);
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero / intro */
+.pf-hero {
+  width: 100%;
+  padding: 84px 0 40px;
+  display:flex;
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(175,133,101,0.04), rgba(175,133,101,0.02));
+}
+
+.pf-hero-inner {
+  width: 82%;
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.pf-hero-title {
+  font-size: clamp(2.4rem, 4.8vw, 3.4rem);
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 10px;
+  letter-spacing: 1px;
+}
+
+.pf-hero-sub {
+  font-size: clamp(1rem, 1.6vw, 1.08rem);
+  color: rgba(25,25,25,0.78);
+  margin: 0 auto;
+  max-width: 760px;
+  line-height: 1.7;
+}
+
+/* Wrapper for grid */
+.pf-inner {
+  width: 100%;
+  display:flex;
+  justify-content:center;
+  padding: 36px 0 60px;
+}
+
+/* Grid */
+.pf-grid {
+  width: 82%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* Card */
+.pf-card {
+  position: relative;
+  height: 360px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #eee;
+  transition: transform 420ms cubic-bezier(.2,.9,.3,1), box-shadow 420ms ease;
+  will-change: transform;
+  display: block;
+  box-shadow: 0 6px 20px rgba(16,16,16,0.06);
+}
+
+/* Image */
+.pf-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  transition: transform 520ms ease;
+  display: block;
+}
+
+/* Glass overlay shown on hover */
+.pf-glass {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(175,133,101,0.08));
+  backdrop-filter: blur(6px) saturate(120%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity: 0;
+  transition: opacity 300ms ease, background 300ms ease;
+}
+
+/* label inside glass */
+.pf-label {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.02);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transform: translateY(6px);
+}
+
+/* Hover / focus state (desktop & keyboard) */
+.pf-card:hover, .pf-card:focus {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 28px 56px rgba(16,16,16,0.16);
+}
+
+.pf-card:hover .pf-image, .pf-card:focus .pf-image {
+  transform: scale(1.08) rotate(0.3deg);
+}
+
+.pf-card:hover .pf-glass, .pf-card:focus .pf-glass {
+  opacity: 1;
+}
+
+/* make the second/third row heights slightly different for a magazine layout */
+.pf-grid > :nth-child(2) { height: 520px; }
+.pf-grid > :nth-child(5) { height: 480px; }
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .pf-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pf-grid > :nth-child(2) { height: 420px; }
+  .pf-grid > :nth-child(5) { height: 420px; }
+}
+
+@media (max-width: 700px) {
+  .pf-grid {
+    grid-template-columns: 1fr;
+    width: 92%;
+  }
+  .pf-card { height: 320px; }
+  .pf-grid > :nth-child(2) { height: 320px; }
+}
+
+/* Accessibility & tactile feedback */
+.pf-card:active {
+  transform: translateY(-4px) scale(1.005);
+  transition: transform 120ms ease;
+}
+
+/* small helper to center the image in the lightbox (handled by library) */
